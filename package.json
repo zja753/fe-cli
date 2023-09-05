@@ -2,16 +2,31 @@
   "name": "fe-cli",
   "version": "0.0.1",
   "description": "可扩展的命令行工具",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "bin": {
     "fe": "./bin/index.js"
   },
-  "author": "jidan.wd",
+  "author": {
+    "name": "jidan.wd",
+    "email": "707092956@qq.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.5.8"
+  },
+  "homepage": "https://github.com/zja753/fe-cli",
+  "keywords": [
+    "fe",
+    "cli",
+    "jidan",
+    "fe-cli",
+    "git"
+  ],
+  "dependencies": {
+    "open": "^9.1.0"
   }
 }
