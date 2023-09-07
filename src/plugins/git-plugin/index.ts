@@ -1,23 +1,19 @@
-import { readFileSync } from 'fs';
-import { open } from '../../tools/index'
+import { readFileSync } from "fs";
+import { open } from "../../tools";
+import { IFeCliPlugin } from "../../interface";
 
-export default function GitPlugin(args: string[]) {
+export default (function GitPlugin(args) {
 
-    console.log(`args JD>>> `, args);
+  /**
+   * 打开当前项目对应 git 页面
+   */
+  if (args.includes("o")) {
+    const packageJsonData = JSON.parse(readFileSync("package.json", "utf8"));
 
-    /**
-     * 打开当前项目对应 git 页面
-     */
-    if (args.includes('o')) {
+    const { homepage } = packageJsonData;
 
-        const packageJsonData = JSON.parse(readFileSync('package.json', 'utf8'))
 
-        const { homepage } = packageJsonData;
+    homepage && open(homepage);
+  }
 
-        console.log(`packageJsonData JD>>> `, packageJsonData);
-
-        homepage && open(homepage)
-    }
-
-    console.log(`JD>>> GitPlugin`);
-}
+} as IFeCliPlugin);

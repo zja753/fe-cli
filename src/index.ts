@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --experimental-specifier-resolution=node
 
 import plugins from "./plugins";
 
@@ -11,7 +11,7 @@ if (plugin) {
 }
 else {
     console.error(`插件${argv[2]}不存在!`)
-}
+} 
 
 
 
