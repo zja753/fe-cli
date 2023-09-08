@@ -1,3 +1,3 @@
 export interface IFeCliPlugin {
-  (args: string[]): void;
+  (args: string[]): Promise<void>;
 }
